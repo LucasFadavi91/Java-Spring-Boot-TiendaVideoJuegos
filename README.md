@@ -1,2 +1,2 @@
 # Java-Spring-Boot-TiendaVideoJuegos
-This repository contains the development of an API to rent video games.
+This repository contains an API that simulates the rental of video games.
