@@ -62,17 +62,5 @@ public class DaoJuego implements InterfazJuego {
 			return 0;
 		}).orElse(0);
 	}
-//	@Override
-//	public int actualizarJuegoById(UUID id, Juego juegoActualizado) {
-//	    Optional<Juego> optionalJuego = selectJuegoById(id);
-//	    if (optionalJuego.isPresent()) {
-//	        Juego juego = optionalJuego.get();
-//	        juego.setNombre(juegoActualizado.getNombre());
-//	        juego.setPrecio(juegoActualizado.getPrecio());
-//	        juego.setStock(juegoActualizado.getStock());
-//	        return 1;
-//	    }
-//	    return 0;
-//	}
-
+	
 }
