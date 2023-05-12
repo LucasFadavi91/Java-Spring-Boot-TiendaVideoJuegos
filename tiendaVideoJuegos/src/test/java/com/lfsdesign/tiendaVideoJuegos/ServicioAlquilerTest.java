@@ -174,33 +174,33 @@ public class ServicioAlquilerTest {
     @Test
     public void testObtenerTodosLosAlquileresPorFechaInicio() {
     	
-	    LocalDate fechaInicio1 = LocalDate.of(2023, 5, 15);
-	    LocalDate fechaFin1 = LocalDate.of(2023, 5, 18);
-	    Juego juego1 = new Juego(UUID.randomUUID(), "Juego1", 10.99, 5);
-	    Cliente cliente1 = new Cliente("12345678A", "Cliente1", "test1@gmail.com", "Calle1, 1");
+	LocalDate fechaInicio1 = LocalDate.of(2023, 5, 15);
+        LocalDate fechaFin1 = LocalDate.of(2023, 5, 18);
+	Juego juego1 = new Juego(UUID.randomUUID(), "Juego1", 10.99, 5);
+	Cliente cliente1 = new Cliente("12345678A", "Cliente1", "test1@gmail.com", "Calle1, 1");
 	
-	    LocalDate fechaInicio2 = LocalDate.of(2023, 5, 20);
-	    LocalDate fechaFin2 = LocalDate.of(2023, 5, 23);
-	    Juego juego2 = new Juego(UUID.randomUUID(), "Juego 2", 15.99, 3);
-	    Cliente cliente2 = new Cliente("23456789B", "Cliente 2", "test2@gmail.com", "Calle1, 2");
+	LocalDate fechaInicio2 = LocalDate.of(2023, 5, 20);
+	LocalDate fechaFin2 = LocalDate.of(2023, 5, 23);
+	Juego juego2 = new Juego(UUID.randomUUID(), "Juego 2", 15.99, 3);
+	Cliente cliente2 = new Cliente("23456789B", "Cliente 2", "test2@gmail.com", "Calle1, 2");
 	
-	    List<Alquiler> alquileres1 = new ArrayList<>();
-	    alquileres1.add(new Alquiler(UUID.randomUUID(), fechaInicio1, fechaFin1, juego1, cliente1));
-	    when(daoAlquiler.selectAllAlquileresByFechaInicio(fechaInicio1)).thenReturn(alquileres1);
+	List<Alquiler> alquileres1 = new ArrayList<>();
+	alquileres1.add(new Alquiler(UUID.randomUUID(), fechaInicio1, fechaFin1, juego1, cliente1));
+	when(daoAlquiler.selectAllAlquileresByFechaInicio(fechaInicio1)).thenReturn(alquileres1);
 	
-	    List<Alquiler> alquileres2 = new ArrayList<>();
-	    alquileres2.add(new Alquiler(UUID.randomUUID(), fechaInicio2, fechaFin2, juego2, cliente2));
-	    when(daoAlquiler.selectAllAlquileresByFechaInicio(fechaInicio2)).thenReturn(alquileres2);
+	List<Alquiler> alquileres2 = new ArrayList<>();
+	alquileres2.add(new Alquiler(UUID.randomUUID(), fechaInicio2, fechaFin2, juego2, cliente2));
+	when(daoAlquiler.selectAllAlquileresByFechaInicio(fechaInicio2)).thenReturn(alquileres2);
 	
-	    List<Alquiler> resultado1 = servicioAlquiler.obtenerTodosLosAlquileresPorFechaInicio(fechaInicio1);
-	    assertEquals(resultado1.size(), 1);
-	    assertEquals(resultado1.get(0).getJuego(), juego1);
-	    assertEquals(resultado1.get(0).getCliente(), cliente1);
-	
-	    List<Alquiler> resultado2 = servicioAlquiler.obtenerTodosLosAlquileresPorFechaInicio(fechaInicio2);
-	    assertEquals(resultado2.size(), 1);
-	    assertEquals(resultado2.get(0).getJuego(), juego2);
-	    assertEquals(resultado2.get(0).getCliente(), cliente2);
+	List<Alquiler> resultado1 = servicioAlquiler.obtenerTodosLosAlquileresPorFechaInicio(fechaInicio1);
+	assertEquals(resultado1.size(), 1);
+	assertEquals(resultado1.get(0).getJuego(), juego1);
+	assertEquals(resultado1.get(0).getCliente(), cliente1);
+	    
+	List<Alquiler> resultado2 = servicioAlquiler.obtenerTodosLosAlquileresPorFechaInicio(fechaInicio2);
+	assertEquals(resultado2.size(), 1);
+	assertEquals(resultado2.get(0).getJuego(), juego2);
+	assertEquals(resultado2.get(0).getCliente(), cliente2);
     }
     
     @Test
