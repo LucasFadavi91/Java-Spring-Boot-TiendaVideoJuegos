@@ -49,8 +49,7 @@ public class AlquilerControlador {
 
 	@PutMapping(path = "/{id}")
 	public void actualizarAlquilerById(@PathVariable("id") UUID id, @RequestBody Alquiler alquilerActualizado) {
-		servicioAlquiler.actualizarAlquiler(id, alquilerActualizado.getFechaInicio(), alquilerActualizado.getFechaFin(),
-				alquilerActualizado.getJuego(), alquilerActualizado.getCliente());
+		servicioAlquiler.actualizarAlquiler(id, alquilerActualizado);
 	}
 	
 }

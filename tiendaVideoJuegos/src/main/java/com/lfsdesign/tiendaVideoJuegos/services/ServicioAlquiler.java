@@ -41,8 +41,7 @@ public class ServicioAlquiler {
         return daoAlquiler.borrarAlquilerById(id);
     }
 
-    public int actualizarAlquiler(UUID id, LocalDate fechaInicio, LocalDate fechaFin, Juego juego, Cliente cliente) {
-        Alquiler alquilerActualizado = new Alquiler(id, fechaInicio, fechaFin, juego, cliente);
+    public int actualizarAlquiler(UUID id, Alquiler alquilerActualizado) {
         return daoAlquiler.actualizarAlquilerById(id, alquilerActualizado);
     }
 
